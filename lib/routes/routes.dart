@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:list/screens/icon_page.dart';
 import 'package:list/screens/list_page.dart';
 
 class AppRouter {
@@ -11,6 +12,9 @@ class AppRouter {
     switch (settings.name) {
       case ListPage.routeName:
         builder = (_) => const ListPage();
+        break;
+       case IconPage.routeName:
+        builder = (_) => IconPage();
         break;
       default:
         throw Exception('Invalid route: ${settings.name}');

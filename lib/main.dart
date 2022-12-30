@@ -40,30 +40,30 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return AdaptiveTheme(
-      builder: (ThemeData light, ThemeData dark) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: light,
-          darkTheme: dark,
-          localizationsDelegates: const [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: S.delegate.supportedLocales,
-          initialRoute: ListPage.routeName,
-          onGenerateRoute: AppRouter.generateRoute,
-          routes: {
-            ListPage.routeName: (_) => const ListPage(),
-          },
-        );
-      },
-      initial: widget.savedThemeMode != null
-          ? AdaptiveThemeMode.light
-          : AdaptiveThemeMode.dark,
-      light: AppThemes.light(),
-      dark: AppThemes.dark(),
+        builder: (ThemeData light, ThemeData dark) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: light,
+            darkTheme: dark,
+            localizationsDelegates: const [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
+            initialRoute: ListPage.routeName,
+            onGenerateRoute: AppRouter.generateRoute,
+            routes: {
+              ListPage.routeName: (_) => const ListPage(),
+            },
+          );
+        },
+        initial: widget.savedThemeMode != null
+            ? AdaptiveThemeMode.light
+            : AdaptiveThemeMode.dark,
+        light: AppThemes.light(),
+        dark: AppThemes.dark(),
     );
   }
 }
